@@ -429,6 +429,7 @@ task is to specify the type of this function.
 49
 -}
 
+squareSum :: Int -> Int -> Int
 squareSum x y = (x + y) * (x + y)
 
 
@@ -449,7 +450,7 @@ Implement the function that takes an integer value and returns the next 'Int'.
   function body with the proper implementation.
 -}
 next :: Int -> Int
-next x = error "next: not implemented!"
+next x = x + 1
 
 {- |
 After you've implemented the function (or even during the implementation), you
@@ -490,7 +491,8 @@ Implement a function that returns the last digit of a given number.
   whether it works for you!
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
-lastDigit n = error "lastDigit: Not implemented!"
+lastDigit :: Int -> Int
+lastDigit n = mod n 10
 
 
 {- |
@@ -520,7 +522,12 @@ branches because it is an expression and it must always return some value.
   satisfying the check will be returned and, therefore, evaluated.
 -}
 closestToZero :: Int -> Int -> Int
-closestToZero x y = error "closestToZero: not implemented!"
+closestToZero x y = if x_diff < y_diff
+    then x
+    else y
+    where
+      x_diff = abs(x) - 0
+      y_diff = abs(y) - 0 
 
 
 {- |
@@ -554,7 +561,11 @@ value after "=" where the condition is true.
 Casual reminder about adding top-level type signatures for all functions :)
 -}
 
-mid x y z = error "mid: not implemented!"
+mid :: Int -> Int -> Int -> Int
+mid x y z
+    | x > y && x > z = max y z
+    | y > x && y > z = max x z
+    | otherwise      = max x y
 
 {- |
 =⚔️= Task 8
@@ -568,7 +579,10 @@ True
 >>> isVowel 'x'
 False
 -}
-isVowel c = error "isVowel: not implemented!"
+isVowel :: Char -> Bool
+isVowel c
+    | c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' = True
+    | otherwise = False
 
 
 {- |
@@ -632,7 +646,11 @@ Try to introduce variables in this task (either with let-in or where) to avoid
 specifying complex expressions.
 -}
 
-sumLast2 n = error "sumLast2: Not implemented!"
+sumLast2 :: Int -> Int
+sumLast2 n = 
+    let last_1 = mod n 10
+        last_2 = mod (div n 10) 10
+    in last_1 + last_2
 
 
 {- |
@@ -653,7 +671,10 @@ You need to use recursion in this task. Feel free to return to it later, if you
 aren't ready for this boss yet!
 -}
 
-firstDigit n = error "firstDigit: Not implemented!"
+firstDigit :: Int -> Int
+firstDigit n 
+    | n < 10    = n
+    | otherwise = firstDigit (div n 10)
 
 
 {-
