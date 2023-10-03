@@ -673,9 +673,9 @@ aren't ready for this boss yet!
 -}
 
 firstDigit :: Int -> Int
-firstDigit n 
-    | n < 10    = n
-    | otherwise = firstDigit (div n 10)
+firstDigit n =
+    let abs_n = abs n
+    in if abs_n < 10 then abs_n else firstDigit (div abs_n 10)
 
 
 {-
