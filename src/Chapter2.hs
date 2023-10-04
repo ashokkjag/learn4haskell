@@ -189,13 +189,13 @@ Evaluate the following expressions in GHCi and insert the answers. Try
 to guess first, what you will see.
 
 >>> [10, 2] ++ [3, 1, 5]
-[10, 2, 3, 1, 5]
+[10,2,3,1,5]
 >>> [] ++ [1, 4]  -- [] is an empty list
-[1, 4]
+[1,4]
 >>> 3 : [1, 2]
-[3, 1, 2]
+[3,1,2]
 >>> 4 : 2 : [5, 10]  -- prepend multiple elements
-[4, 2, 5, 10]
+[4,2,5,10]
 >>> [1 .. 10]  -- list ranges
 [1,2,3,4,5,6,7,8,9,10]
 >>> [10 .. 1]
@@ -205,7 +205,7 @@ to guess first, what you will see.
 >>> length [4, 10, 5]  -- list length
 3
 >>> replicate 5 True
-[True, True, True, True, True]
+[True,True,True,True,True]
 >>> take 5 "Hello, World!"
 "Hello"
 >>> drop 5 "Hello, World!"
